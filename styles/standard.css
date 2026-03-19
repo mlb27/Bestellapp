@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+
+button {
+    appearance: none;
+    padding: 0;
+    background: none;
+    border: none;
+}
