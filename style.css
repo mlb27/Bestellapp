@@ -1,3 +1,5 @@
+/* Header */
+
 header {
     height: 128px;
     width: 100%;
@@ -7,7 +9,6 @@ header {
     display: flex;
     justify-content: center;
 }
-
 .content {
     width: 100%;
     max-width: 1440px;
@@ -15,4 +16,39 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Hero */
+
+.hero {
+    height: 508px;
+
+    background-image: url("./assets/img/hero.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+}
+.hero img {
+    width: 200px;
+    height: 200px;
+
+    padding-top: 400px;
+}
+
+/* About */
+
+.about {
+    display: flex;
+    justify-self: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 90px;
+}
+.about-head {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }

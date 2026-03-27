@@ -2,9 +2,33 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: "Palanquin";
+    src: url("../assets/fonts/palanquin-v17-latin-regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+body {
+    font-family: "Palanquin", sans-serif;
+}
+
 button {
     appearance: none;
     padding: 0;
     background: none;
     border: none;
+}
+
+.orange {
+    color: #e76c1f;
+}
+
+h1 {
+    font-size: 48px;
+    margin-block: 0;
+    margin-inline: 0;
+}
+
+.bold {
+    font-weight: bold;
 }
