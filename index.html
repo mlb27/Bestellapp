@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bestell App</title>
 
-        <script src="./script.js"></script>
-        <script src="./scripts/db.js"></script>
-        <script src="./scripts/template.js"></script>
+        <script src="./scripts/db.js" defer></script>
+        <script src="./scripts/template.js" defer></script>
+        <script src="./script.js" defer></script>
 
         <link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./styles/assets.css" />
@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="./styles/fonts.css" />
         <link rel="stylesheet" href="./styles/standard.css" />
     </head>
-    <body>
+    <body onload="init()">
         <header>
-            <section class="content">
+            <section class="content mw">
                 <img src="./assets/icons/logo_02.svg" alt="Bestell App Logo" />
                 <button class="btn-ham">
                     <img src="./assets/icons/dehaze.svg" alt="Ham Menu Icon" />
@@ -32,7 +32,115 @@
                 <h1><span class="orange">Burger</span>House</h1>
                 <img src="./assets/icons/Frame 28.svg" />
             </div>
-            <p class="bold">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            <p class="bold fs24">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+        </section>
+        <section class="menu">
+            <div class="mw menu-layout">
+                <div class="menu-content">
+                    <div class="divider">
+                        <img src="./assets/icons/Chanese1.svg" />
+                        <h2 class="white fs40">Burger & Sandwiches</h2>
+                    </div>
+
+                    <div class="menuitem">
+                        <img src="./assets/img/m1.png" />
+
+                        <div class="menuitem-text">
+                            <h2>Veggie mushroom black burger</h2>
+                            <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">8,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(0)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m2.png" />
+
+                        <div class="menuitem-text">
+                            <h2>All meat burger</h2>
+                            <p>Beef, Bacon, Dill pickles, Smoked cheese,<br />Ketchup, BBQ souse</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">15,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(1)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m3.png" />
+
+                        <div class="menuitem-text">
+                            <h2>Beef red burger</h2>
+                            <p>Beef, Cheese, Tomatoes, Lettuce, Onion</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">14,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(2)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m4.png" />
+
+                        <div class="menuitem-text">
+                            <h2>BIg chicken burger</h2>
+                            <p>Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell <br />pepper,</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">15,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(3)">Add to basket</button>
+                    </div>
+
+                    <div class="divider">
+                        <img src="./assets/icons/Pizza1.svg" />
+                        <h2 class="white fs40">Pizza (30cm)</h2>
+                    </div>
+
+                    <div class="menuitem">
+                        <img src="./assets/img/m1.png" />
+
+                        <div class="menuitem-text">
+                            <h2>Veggie mushroom black burger</h2>
+                            <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">8,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(0)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m2.png" />
+
+                        <div class="menuitem-text">
+                            <h2>All meat burger</h2>
+                            <p>Beef, Bacon, Dill pickles, Smoked cheese,<br />Ketchup, BBQ souse</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">15,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(1)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m3.png" />
+
+                        <div class="menuitem-text">
+                            <h2>Beef red burger</h2>
+                            <p>Beef, Cheese, Tomatoes, Lettuce, Onion</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">14,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(2)">Add to basket</button>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./assets/img/m4.png" />
+
+                        <div class="menuitem-text">
+                            <h2>BIg chicken burger</h2>
+                            <p>Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell <br />pepper,</p>
+                        </div>
+
+                        <span class="top-right fs24 bold">15,90 €</span>
+                        <button class="bottom-right add-btn bold" onclick="addToBasket(3)">Add to basket</button>
+                    </div>
+                </div>
+                <div class="basket" id="basket">
+                    <div class="" id=""></div>
+                </div>
+            </div>
         </section>
     </body>
 </html>

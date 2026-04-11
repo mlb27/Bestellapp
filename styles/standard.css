@@ -23,6 +23,14 @@ button {
     color: #e76c1f;
 }
 
+.white {
+    color: white;
+}
+
+.beige {
+    color: #FDEADC;
+}
+
 h1 {
     font-size: 48px;
     margin-block: 0;
@@ -31,4 +39,18 @@ h1 {
 
 .bold {
     font-weight: bold;
+}
+
+.fs24 {
+    font-size: 24px;
+}
+
+.fs40 {
+    font-size: 40px;
+}
+
+.mw {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }

@@ -1,3 +1,130 @@
+.menu-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.menu-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
 .btn-ham {
     cursor: pointer;
+}
+
+/* Divider */
+
+.divider {
+    margin: 80px 0 0;
+    background-color: #e76c1f;
+    height: 60px;
+
+    display: flex;
+    gap: 40px;
+
+    overflow: visible;
+    align-items: center;
+}
+
+.divider img {
+    padding-left: 80px;
+    width: 88px;
+    height: 91px;
+    transform: translateY(-13px);
+}
+
+/* Menu Items */
+
+.menuitem {
+    position: relative;
+    margin: 20px 0;
+    background-color: #fdeadc;
+
+    width: 720px;
+    height: 141px;
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.menuitem img {
+    margin: 10px 10px;
+    border-radius: 16px;
+}
+
+.menuitem-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-right {
+    position: absolute;
+    right: 12px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+.add-btn {
+    border-radius: 16px;
+    background-color: white;
+    padding: 8px;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+}
+
+/* Basket */
+
+.basket {
+    width: 435px;
+    min-height: 794px;
+    position: sticky;
+    top: 24px;
+    z-index: 1;
+    display: flex;
+    margin-top: 80px;
+    padding: 24px;
+    align-self: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    background-color: #363534;
+}
+
+.basket h2,
+.basket p {
+    position: relative;
+    z-index: 1;
+}
+
+.basket img {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.img-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
 }
