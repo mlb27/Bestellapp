@@ -11,5 +11,5 @@ function renderBasket() {
 }
 
 function addToBasket(item) {
-    console.log(categoryOne[item].title);
+    console.log(categoryOne[item].title + ", " + categoryOne[item].price);
 }
