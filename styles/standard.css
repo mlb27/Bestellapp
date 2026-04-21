@@ -54,3 +54,10 @@ h1 {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}

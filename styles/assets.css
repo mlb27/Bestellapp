@@ -83,48 +83,20 @@
     cursor: pointer;
 }
 
-/* Basket */
+/* Menu Bar Responsiv */
 
-.basket {
-    width: 435px;
-    min-height: 794px;
-    position: sticky;
-    top: 24px;
-    z-index: 1;
-    display: flex;
-    margin-top: 80px;
-    padding: 24px;
-    align-self: flex-start;
-    flex-shrink: 0;
-    flex-direction: column;
-    text-align: center;
-    align-items: stretch;
-    overflow: hidden;
-
-    border-radius: 32px;
-
+.menu-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #363534;
+    height: 100px;
 }
 
-.basket h2,
-.basket p {
-    position: relative;
-    z-index: 1;
-}
-
-.basket img {
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.img-container {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
+@media (min-width: 1151px) {
+    .menu-bar {
+        display: none;
+    }
 }

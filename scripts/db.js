@@ -1,4 +1,4 @@
-let categoryOne = [
+let menuItems = [
     { menuItem: 1, title: "Veggie mushroom black burger", price: 8.9 },
     { menuItem: 2, title: "All meat burger", price: 15.9 },
     { menuItem: 3, title: "Beef red burger", price: 14.9 },
