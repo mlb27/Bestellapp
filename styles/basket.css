@@ -21,6 +21,10 @@
     background-color: #363534;
 }
 
+.basket-backdrop {
+    display: none;
+}
+
 .basket h2,
 .basket p {
     position: relative;
@@ -262,7 +266,40 @@
 }
 
 @media (max-width: 1150px) {
+    .basket-backdrop-visible {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1099;
+    }
+
     .basket {
         display: none;
+    }
+
+    .basket-mobile-open {
+        width: min(90vw, 420px);
+        min-height: auto;
+        max-height: 80vh;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1100;
+        display: flex;
+        margin-top: 0;
+        transform: translate(-50%, -50%);
+        overflow-y: auto;
+    }
+
+    .basket-mobile-open .img-container {
+        position: static;
+        inset: auto;
+        margin-top: 24px;
+    }
+
+    .basket-mobile-open .img-container img {
+        width: 88px;
+        height: 88px;
     }
 }

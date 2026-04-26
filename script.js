@@ -1,6 +1,7 @@
 let basketRef;
 let basketItemsRef;
 let buyNowDialogRef;
+let basketBackdropRef;
 let basket = [];
 let buyNowDialogTimeout;
 
@@ -12,6 +13,8 @@ const buyNowDialogFadeDuration = 300;
 
 function init() {
     basketRef = document.getElementById("basket");
+    basketBackdropRef = document.getElementById("basket-backdrop");
+    buyNowDialogRef = document.getElementById("buy-now-dialog");
     getBasketFromLocalStorage();
     renderBasket();
 }
@@ -32,7 +35,6 @@ function renderBasket() {
 
 function updateBasketRefs() {
     basketItemsRef = document.getElementById("basket-items");
-    buyNowDialogRef = document.getElementById("buy-now-dialog");
 }
 
 function updateBasketScrollState() {
@@ -48,6 +50,7 @@ function updateBasketScrollState() {
 }
 
 function openBuyNowDialog() {
+    closeMobileBasket();
     basket = [];
     saveBasketToLocalStorage();
     renderBasket();
@@ -72,6 +75,25 @@ function closeBuyNowDialog() {
     clearTimeout(buyNowDialogTimeout);
     buyNowDialogRef.classList.remove("buy-now-dialog-fadeout");
     buyNowDialogRef.close();
+    closeMobileBasket();
+}
+
+function openMobileBasket() {
+    if (!basketRef || !basketBackdropRef) {
+        return;
+    }
+
+    basketRef.classList.add("basket-mobile-open");
+    basketBackdropRef.classList.add("basket-backdrop-visible");
+}
+
+function closeMobileBasket() {
+    if (!basketRef || !basketBackdropRef) {
+        return;
+    }
+
+    basketRef.classList.remove("basket-mobile-open");
+    basketBackdropRef.classList.remove("basket-backdrop-visible");
 }
 
 function fadeOutBuyNowDialog() {
@@ -147,24 +169,26 @@ function getBasketFromLocalStorage() {
         return;
     }
 
-    basket = parsedBasket
-        .filter((item) => {
-            return (
-                typeof item.menuIndex === "number" &&
-                typeof item.title === "string" &&
-                typeof item.price === "number" &&
-                typeof item.amount === "number" &&
-                item.amount > 0
-            );
-        })
-        .map((item) => {
-            return {
+    basket = [];
+
+    for (let index = 0; index < parsedBasket.length; index++) {
+        let item = parsedBasket[index];
+
+        if (
+            typeof item.menuIndex === "number" &&
+            typeof item.title === "string" &&
+            typeof item.price === "number" &&
+            typeof item.amount === "number" &&
+            item.amount > 0
+        ) {
+            basket.push({
                 menuIndex: item.menuIndex,
                 title: item.title,
                 price: item.price,
                 amount: Math.min(item.amount, maxItemAmount)
-            };
-        });
+            });
+        }
+    }
 }
 
 function getSubTotal() {

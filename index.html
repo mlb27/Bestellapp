@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./styles/assets.css" />
         <link rel="stylesheet" href="./styles/basket.css" />
-        <link rel="stylesheet" href="./styles/fonts.css" />
         <link rel="stylesheet" href="./styles/standard.css" />
     </head>
     <body onload="init()">
@@ -34,7 +33,7 @@
                 <h1><span class="orange">Burger</span>House</h1>
                 <img src="./assets/icons/Frame 28.svg" />
             </div>
-            <p class="bold fs24">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            <p class="bold fs24">The best of Burgers, Pizza, and<span class="about-break"><br /></span>Greens, all in one great place.</p>
         </section>
 
         <section class="menu">
@@ -42,7 +41,7 @@
                 <div class="menu-content">
                     <div class="divider">
                         <img src="./assets/icons/Chanese1.svg" />
-                        <h2 class="white fs40">Burger & Sandwiches</h2>
+                        <h2 class="white fs40">Burger<span class="divider-title-desktop"> & Sandwiches</span></h2>
                     </div>
 
                     <div class="menuitem">
@@ -92,7 +91,7 @@
 
                     <div class="divider">
                         <img src="./assets/icons/Pizza1.svg" />
-                        <h2 class="white fs40">Pizza (30cm)</h2>
+                        <h2 class="white fs40">Pizza<span class="divider-title-desktop"> (30cm)</span></h2>
                     </div>
 
                     <div class="menuitem">
@@ -200,9 +199,27 @@
                         <button class="bottom-right add-btn bold" onclick="addToBasket(11)">Add to basket</button>
                     </div>
                 </div>
+                <div class="basket-backdrop" id="basket-backdrop" onclick="closeMobileBasket()"></div>
                 <div class="basket" id="basket"></div>
             </div>
         </section>
+
+        <dialog class="buy-now-dialog" id="buy-now-dialog">
+            <div class="buy-now-dialog-content">
+                <button class="buy-now-dialog-x bold" onclick="closeBuyNowDialog()" aria-label="Close dialog">
+                    <img class="buy-now-dialog-close-icon" src="./assets/icons/close.svg" alt="" />
+                </button>
+                <img class="buy-now-dialog-image" src="./assets/img/truck.png" alt="Delivery truck" />
+                <h3 class="buy-now-dialog-title">Order confirmed!</h3>
+                <p class="buy-now-dialog-text">Your Food is on the way!</p>
+            </div>
+        </dialog>
+
+        <div class="menu-bar">
+            <button class="menu-bar-cart-btn" onclick="openMobileBasket()">
+                <img src="./assets/icons/shopping_cart.svg" alt="Open basket" />
+            </button>
+        </div>
 
         <footer>
             <section class="content mw">

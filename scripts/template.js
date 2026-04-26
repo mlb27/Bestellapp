@@ -15,8 +15,7 @@ function returnMenuItem() {
 function returnEmptyBasket() {
     return `<h2 class="beige fs40">Your Basket</h2>
                     <p class="beige fs24">Nothing here yet. <br />Go ahead and choose something<br />delicious!</p>
-                    <div class="img-container"><img src="./assets/icons/shopping_cart.svg" alt=""/></div>
-                    ${returnBuyNowDialog()}`;
+                    <div class="img-container"><img src="./assets/icons/shopping_cart.svg" alt=""/></div>`;
 }
 
 function returnBasket() {
@@ -32,8 +31,7 @@ function returnBasket() {
 
     return `<h2 class="beige fs40">Your Basket</h2>
                     <div class="basket-items" id="basket-items">${basketItems}</div>
-                    ${returnBasketSummary()}
-                    ${returnBuyNowDialog()}`;
+                    ${returnBasketSummary()}`;
 }
 
 function returnBasketItem(item) {
@@ -78,17 +76,4 @@ function returnBasketSummary() {
                         </div>
                         <button class="buy-now-btn bold" onclick="openBuyNowDialog()">Buy Now (${formatPrice(getTotalCost())})</button>
                     </div>`;
-}
-
-function returnBuyNowDialog() {
-    return `<dialog class="buy-now-dialog" id="buy-now-dialog">
-                        <div class="buy-now-dialog-content">
-                            <button class="buy-now-dialog-x bold" onclick="closeBuyNowDialog()" aria-label="Close dialog">
-                                <img class="buy-now-dialog-close-icon" src="./assets/icons/close.svg" alt="" />
-                            </button>
-                            <img class="buy-now-dialog-image" src="./assets/img/truck.png" alt="Delivery truck" />
-                            <h3 class="buy-now-dialog-title">Order confirmed!</h3>
-                            <p class="buy-now-dialog-text">Your Food is on the way!</p>
-                        </div>
-                    </dialog>`;
 }

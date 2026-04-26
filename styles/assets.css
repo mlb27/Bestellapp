@@ -43,7 +43,10 @@
     background-color: #fdeadc;
 
     width: 720px;
-    height: 141px;
+    min-height: 141px;
+    height: auto;
+    padding-bottom: 52px;
+    box-sizing: border-box;
 
     border-radius: 16px;
 
@@ -60,6 +63,13 @@
 .menuitem-text {
     display: flex;
     flex-direction: column;
+    padding-right: 160px;
+    gap: 4px;
+}
+
+.menuitem-text h2,
+.menuitem-text p {
+    overflow-wrap: break-word;
 }
 
 .top-right {
@@ -93,10 +103,112 @@
     z-index: 1000;
     background-color: #363534;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.menu-bar-cart-btn {
+    border: none;
+    background: transparent;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-bar-cart-btn img {
+    width: 36px;
+    height: 36px;
+}
+
+.about-break {
+    display: none;
+}
+
+.divider-title-desktop {
+    display: inline;
 }
 
 @media (min-width: 1151px) {
     .menu-bar {
         display: none;
+    }
+}
+
+@media (max-width: 1150px) {
+    body {
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 720px) {
+    .about-head h1 {
+        font-size: 30px;
+    }
+
+    .about-break {
+        display: inline;
+    }
+
+    .divider-title-desktop {
+        display: none;
+    }
+
+    .divider {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .divider img {
+        padding-left: 0;
+    }
+
+    .divider h2 {
+        text-align: center;
+    }
+
+    .menu-content {
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .menuitem {
+        min-height: 300px;
+        height: auto;
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menuitem img {
+        width: 96%;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .menuitem-text {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        padding-right: 20px;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .top-right {
+        left: 12px;
+        right: auto;
+        top: auto;
+        bottom: 12px;
+    }
+
+    .about p {
+        text-align: center;
     }
 }
