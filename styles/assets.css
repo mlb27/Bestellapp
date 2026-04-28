@@ -87,10 +87,21 @@
     border-radius: 16px;
     background-color: white;
     padding: 8px;
+    min-width: 112px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .add-btn:hover {
     cursor: pointer;
+}
+
+.add-btn-added {
+    background-color: #e76c1f;
+    color: white;
+    transform: scale(1.03);
 }
 
 /* Menu Bar Responsiv */
@@ -144,6 +155,20 @@
     }
 }
 
+@media (min-width: 721px) and (max-width: 1150px) {
+    .menu-layout {
+        justify-content: center;
+    }
+
+    .menu-content {
+        flex: 0 1 720px;
+    }
+
+    .menuitem {
+        margin: 20px auto;
+    }
+}
+
 @media (max-width: 720px) {
     .about-head h1 {
         font-size: 30px;
@@ -171,7 +196,7 @@
     }
 
     .menu-content {
-        padding: 0 12px;
+        padding: 0 16px;
         box-sizing: border-box;
     }
 

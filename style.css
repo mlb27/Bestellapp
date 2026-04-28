@@ -4,6 +4,7 @@ header {
     height: 128px;
     width: 100%;
 
+
     background-color: #e76c1f;
 
     display: flex;
@@ -13,6 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px;
 }
 
 /* Hero */

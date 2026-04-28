@@ -13,51 +13,39 @@ function returnMenuItem() {
 }
 
 function returnEmptyBasket() {
-    return `<h2 class="beige fs40">Your Basket</h2>
+    return `${returnBasketHeader()}
                     <p class="beige fs24">Nothing here yet. <br />Go ahead and choose something<br />delicious!</p>
                     <div class="img-container"><img src="./assets/icons/shopping_cart.svg" alt=""/></div>`;
 }
 
-function returnBasket() {
-    if (basket.length === 0) {
-        return returnEmptyBasket();
-    }
-
-    let basketItems = "";
-
-    for (let index = 0; index < basket.length; index++) {
-        basketItems += returnBasketItem(basket[index]);
-    }
-
-    return `<h2 class="beige fs40">Your Basket</h2>
-                    <div class="basket-items" id="basket-items">${basketItems}</div>
-                    ${returnBasketSummary()}`;
+function returnBasketHeader() {
+    return `<button class="basket-close-btn" onclick="closeMobileBasket()" aria-label="Close basket">
+                        <img src="./assets/icons/close.svg" alt="" />
+                    </button>
+                    <h2 class="beige fs40">Your Basket</h2>`;
 }
 
 function returnBasketItem(item) {
-    let isAddDisabled = item.amount >= maxItemAmount;
-
     return `<div class="basketitem bold">
                         <span class="basketitem-title">${item.amount} x ${item.title}</span>
                         <span class="count bold">
-                            <button class="count-action count-remove ${item.amount > 1 ? "count-text-action" : ""}" onclick="removeFromBasket(${item.menuIndex})" aria-label="${item.amount > 1 ? `Remove one ${item.title}` : `Remove ${item.title} from basket`}">
-                                ${returnRemoveButton(item)}
+                            <button class="count-action count-remove" onclick="deleteFromBasket(${item.menuIndex})" aria-label="Remove ${item.title} from basket">
+                                ${returnDeleteButton()}
+                            </button>
+                            <button class="count-action count-text-action" onclick="removeFromBasket(${item.menuIndex})" aria-label="Remove one ${item.title}">
+                                <span class="count-symbol count-symbol-minus" aria-hidden="true"></span>
                             </button>
                             <p class="count-value">${item.amount}</p>
-                            <button class="count-action count-text-action countAdd ${isAddDisabled ? "count-action-disabled" : ""}" onclick="addToBasket(${item.menuIndex})" aria-label="Add one ${item.title}" ${isAddDisabled ? "disabled" : ""}>
-                                <span class="count-symbol">+</span>
+                            <button class="count-action count-text-action countAdd" onclick="addToBasket(${item.menuIndex})" aria-label="Add one ${item.title}">
+                                <span class="count-symbol count-symbol-plus" aria-hidden="true"></span>
                             </button>
                         </span>
                         <span class="price bold">${formatPrice(item.price * item.amount)}</span>
                     </div>`;
 }
 
-function returnRemoveButton(item) {
-    if (item.amount === 1) {
-        return `<img src="./assets/icons/delete.svg" alt="" />`;
-    }
-
-    return `<span class="count-symbol">-</span>`;
+function returnDeleteButton() {
+    return `<img src="./assets/icons/delete.svg" alt="" />`;
 }
 
 function returnBasketSummary() {

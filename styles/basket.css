@@ -25,6 +25,30 @@
     display: none;
 }
 
+body.mobile-basket-open {
+    height: 100%;
+    overflow: hidden;
+}
+
+.basket-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    display: none;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.basket-close-btn img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
 .basket h2,
 .basket p {
     position: relative;
@@ -79,6 +103,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    line-height: 0;
 }
 
 .count-action:hover {
@@ -108,14 +133,37 @@
 }
 
 .count-text-action {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
 }
 
 .count-symbol {
-    font-size: 28px;
-    line-height: 1;
-    color: #363534;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: block;
+}
+
+.count-symbol::before,
+.count-symbol::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: #363534;
+    transform: translate(-50%, -50%);
+}
+
+.count-symbol-plus::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.count-symbol-minus::after {
+    display: none;
 }
 
 .basketitem-title {
@@ -279,17 +327,38 @@
     }
 
     .basket-mobile-open {
-        width: min(90vw, 420px);
-        min-height: auto;
-        max-height: 80vh;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 100vh;
+        min-height: 100dvh;
+        max-height: none;
         position: fixed;
-        top: 50%;
-        left: 50%;
+        top: 0;
+        left: 0;
         z-index: 1100;
         display: flex;
-        margin-top: 0;
-        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 32px 24px;
+        border-radius: 0;
+        box-sizing: border-box;
         overflow-y: auto;
+        transform: none;
+    }
+
+    .basket-mobile-open .basket-close-btn {
+        display: flex;
+    }
+
+    .basket-mobile-open .basket-items-scroll {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+    }
+
+    .basket-mobile-open .basket-summary {
+        margin-top: 24px;
+        padding-bottom: 24px;
     }
 
     .basket-mobile-open .img-container {
@@ -301,5 +370,11 @@
     .basket-mobile-open .img-container img {
         width: 88px;
         height: 88px;
+    }
+}
+
+@media (max-width: 720px) {
+    .basket-mobile-open {
+        padding: 24px 16px;
     }
 }
